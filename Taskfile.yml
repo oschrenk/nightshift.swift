@@ -1,0 +1,35 @@
+version: '3'
+vars:
+  NAME: "nightshift"
+  BINDIR: "$HOME/.local/bin"
+tasks:
+  build:
+    cmds:
+      - swift build
+    silent: true
+  run:
+    cmds:
+      - swift run {{$NAME}}
+    silent: true
+  release:
+    cmds:
+      - swift build --configuration release --disable-sandbox --arch arm64
+    silent: true
+  install:
+    deps: [release]
+    cmds:
+      - mkdir -p "{{.BINDIR}}"
+      - cp ".build/release/{{.NAME}}" "{{.BINDIR}}"
+  uninstall:
+    cmds:
+      - rm -rf "{{.BINDIR}}/{{.NAME}}"
+    silent: true
+  # requires `brew install swiftlint`
+  lint:
+    cmds:
+      - swiftlint
+    silent: true
+  clean:
+    cmds:
+      - rm -rf .build
+    silent: true
