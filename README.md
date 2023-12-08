@@ -35,7 +35,7 @@ nightshift temperature 0.33
 
 **Via Github**
 
-```https://www.youtube.com/watch?v=kWbALI5Ik0A
+```
 git clone git@github.com:oschrenk/nightshift.swift.git
 cd nightshift.swift
 
