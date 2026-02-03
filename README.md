@@ -50,24 +50,3 @@ brew tap oschrenk/made git@github.com:oschrenk/homebrew-made
 brew install oschrenk/made/nightshift
 ```
 
-## Development
-
-- `task build` **Build**
-- `task run` **Run**
-- `task lint` **Lint**
-
-## Release
-
-1. produce artifact in `./.build/release/nightshift`
-2. Export version number, prefix with `v`
-3. Create Tag
-4. Push Tag
-5. Create release on github
-
-```
-task release
-export VERSION=v0.1
-git tag "$VERSION"
-git push origin "$VERSION"
-gh release create "$VERSION" '.build/release/nightshift'
-```
