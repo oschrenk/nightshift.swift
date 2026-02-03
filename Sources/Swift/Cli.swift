@@ -1,7 +1,7 @@
 import ArgumentParser
 
 @main
-struct Cli: ParsableCommand {
+struct Nightshift: ParsableCommand {
   static var configuration = CommandConfiguration(
     abstract: "Control Night Shift",
     subcommands: [
@@ -36,7 +36,7 @@ struct Cli: ParsableCommand {
   }
 }
 
-extension Cli {
+extension Nightshift {
   static func validateTemperature(value: Float?) throws {
     guard value ?? 1 <= 1 else {
       throw ValidationError("Temperature value too large. Needs to between (or at) 0 and 1.")
