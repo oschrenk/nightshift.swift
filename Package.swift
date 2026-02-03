@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "nightshift",
   dependencies: [
-    .package(url: "https://github.com/apple/swift-argument-parser", exact: "1.2.3"),
+    .package(url: "https://github.com/apple/swift-argument-parser", exact: "1.7.0"),
   ],
   targets: [
     .target(
